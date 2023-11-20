@@ -5,6 +5,7 @@ from django.http import HttpResponse
 from django.template import loader
 from . models import Article
 from django.views import generic
+from .forms import ArticleForm
 
 # Create your views here.
 
@@ -18,3 +19,9 @@ class IndexView(generic.ListView):
 class ArticleView(generic.DetailView):
     model = Article
     template_name = "first_app/article.html"
+
+
+class NewView(generic.CreateView):
+    form_class = ArticleForm
+    template_name = "first_app/form.html"
+    success_url = "/"
