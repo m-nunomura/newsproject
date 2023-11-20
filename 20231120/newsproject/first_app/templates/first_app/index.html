@@ -1,9 +1,11 @@
-{%include "first_app/header.html"%}
+{%extends "base.html"%}
+{%block title%}トップページ{%endblock%}
+{%block content%}
 <ul>
-    {%for article in articles%}
+    {%for article in object_list%}
     <li>
-        <a href="/article/{{article.id}}/">{{article.title}}</a>
+        <a href="{%url 'first_app:article' article.pk%}">{{article.title}}</a>
     </li>
     {%endfor%}
 </ul>
-{%include "first_app/footer.html"%}
+{%endblock%}

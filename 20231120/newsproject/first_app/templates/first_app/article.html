@@ -1,4 +1,6 @@
-{%include "first_app/header.html"%}
+{%extends "base.html"%}
+{%block title%}{{article.title}}{%endblock%}
+{%block content%}
 <article>
     <h2>{{article.title}}</h2>
     <small>{{article.create_at|date:"Y年n月j日"}}</small>
@@ -16,4 +18,4 @@
     {%endfor%}
     <p><a href="/">トップページ</a></p>
 </article>
-{%include "first_app/footer.html"%}
+{%endblock%}
