@@ -1,0 +1,9 @@
+{%include "first_app/header.html"%}
+<ul>
+    {%for article in articles%}
+    <li>
+        <a href="/article/{{article.id}}/">{{article.title}}</a>
+    </li>
+    {%endfor%}
+</ul>
+{%include "first_app/footer.html"%}
